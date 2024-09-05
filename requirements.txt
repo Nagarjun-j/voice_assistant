@@ -1,0 +1,4 @@
+requests
+fastapi
+boto3
+uvicorn

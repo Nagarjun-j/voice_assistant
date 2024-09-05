@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: fastapi-app
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn main:app --host 0.0.0.0 --port 10000"
+    envVars:
+      - key: AWS_ACCESS_KEY_ID
+        fromSecret: AWS_ACCESS_KEY_ID
+      - key: AWS_SECRET_ACCESS_KEY
+        fromSecret: AWS_SECRET_ACCESS_KEY
+      - key: AWS_SESSION_TOKEN
+        fromSecret: AWS_SESSION_TOKEN
